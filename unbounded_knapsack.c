@@ -92,6 +92,14 @@ void rand_knapsack_data(char *argv[], int *capacity, int *num_items, Item **item
     }
 }
 
+// Function to print items
+void print_items(int num_items, Item *items) {
+    printf("Items:\n");
+    for (int i = 0; i < num_items; i++) {
+        printf("Item %d: Weight = %d, Value = %d\n", i + 1, items[i].weight, items[i].value);
+    }
+}
+
 int main(int argc, char *argv[]) {
     int capacity, num_items, threads;
     Item *items;
@@ -121,10 +129,7 @@ int main(int argc, char *argv[]) {
     omp_set_num_threads(threads);
 
     // Print the items
-    printf("Items:\n");
-    for (int i = 0; i < num_items; i++) {
-        printf("Item %d: Weight = %d, Value = %d\n", i + 1, items[i].weight, items[i].value);
-    }
+    // print_items(num_items, items);
 
     // Solve the unbounded knapsack problem
     double start_time = omp_get_wtime();
@@ -132,8 +137,9 @@ int main(int argc, char *argv[]) {
     double end_time = omp_get_wtime();
 
     // Print the result
-    printf("Maximum value in Knapsack = %d\n", max_value);
-    printf("Time taken: %f seconds\n", end_time - start_time);
+    // printf("Maximum value in Knapsack = %d\n", max_value);
+    // printf("Time taken: %f seconds\n", end_time - start_time);
+    printf("%f", end_time - start_time)
 
     // Free allocated memory
     free(items);
