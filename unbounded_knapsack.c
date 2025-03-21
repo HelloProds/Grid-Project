@@ -139,7 +139,7 @@ int main(int argc, char *argv[]) {
     // Print the result
     // printf("Maximum value in Knapsack = %d\n", max_value);
     // printf("Time taken: %f seconds\n", end_time - start_time);
-    printf("%f", end_time - start_time)
+    printf("%f\n", end_time - start_time);
 
     // Free allocated memory
     free(items);
