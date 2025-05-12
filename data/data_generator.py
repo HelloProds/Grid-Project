@@ -8,8 +8,10 @@ num_items = 10
 # Generate items with weight and value within the specified ranges
 items = []
 for _ in range(num_items):
-    weight = random.randint(1, knapsack_capacity)  # Weight between 1 and capacity
-    value = random.randint(weight, 2 * weight - 1)  # Value between weight and 2 * weight - 1
+    # Weight between 1 and capacity
+    weight = random.randint(1, knapsack_capacity)
+    # Value between weight and 2 * weight - 1
+    value = random.randint(weight, 2 * weight - 1)
     items.append([weight, value])
 
 # Sort the items by weight
